@@ -17,7 +17,7 @@
                BlueprintIdentifier = "774062F41D6FC74500024F3A"
                BuildableName = "tippy.app"
                BlueprintName = "tippy"
-               ReferencedContainer = "container:tippy.xcodeproj">
+               ReferencedContainer = "container:Tipster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "774063081D6FC74500024F3A"
                BuildableName = "tippyTests.xctest"
                BlueprintName = "tippyTests"
-               ReferencedContainer = "container:tippy.xcodeproj">
+               ReferencedContainer = "container:Tipster.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "774063131D6FC74500024F3A"
                BuildableName = "tippyUITests.xctest"
                BlueprintName = "tippyUITests"
-               ReferencedContainer = "container:tippy.xcodeproj">
+               ReferencedContainer = "container:Tipster.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "774062F41D6FC74500024F3A"
             BuildableName = "tippy.app"
             BlueprintName = "tippy"
-            ReferencedContainer = "container:tippy.xcodeproj">
+            ReferencedContainer = "container:Tipster.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "774062F41D6FC74500024F3A"
             BuildableName = "tippy.app"
             BlueprintName = "tippy"
-            ReferencedContainer = "container:tippy.xcodeproj">
+            ReferencedContainer = "container:Tipster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "774062F41D6FC74500024F3A"
             BuildableName = "tippy.app"
             BlueprintName = "tippy"
-            ReferencedContainer = "container:tippy.xcodeproj">
+            ReferencedContainer = "container:Tipster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
