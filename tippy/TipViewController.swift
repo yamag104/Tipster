@@ -16,20 +16,29 @@ class TipViewController: UIViewController {
   @IBOutlet weak var tipControl: UISegmentedControl!
   @IBOutlet weak var tipView: UIView!
   var tipViewHidden: Bool!
+  let defaults = NSUserDefaults.standardUserDefaults()
   
   override func viewDidLoad() {
+    print("viewDidLoad")
     super.viewDidLoad()
     setViewMovedUp(false)
+    // Always show number pad
     billField.becomeFirstResponder()
-    // Get persisted tip % value 
-    let defaults = NSUserDefaults.standardUserDefaults()
-    let tipControlIndex = defaults.integerForKey(Constants.TipControlIndex)
-    tipControl.setEnabled(true, forSegmentAtIndex: tipControlIndex)
+    updateTipSegmentControl()
+    
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultTipChanged",
+                                                               name: Notification.DefaultTipChanged,
+                                                             object: nil)
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  func defaultTipChanged() {
+    updateTipSegmentControl()
+    calculateTip(self)
   }
   
   @IBAction func calculateTip(sender: AnyObject) {
@@ -66,6 +75,11 @@ class TipViewController: UIViewController {
     
     tipView.frame = rect
     UIView.commitAnimations()
+  }
+  
+  func updateTipSegmentControl() {
+    let tipControlIndex = defaults.integerForKey(Constants.TipControlIndex)
+    tipControl.selectedSegmentIndex = tipControlIndex
   }
 }
 

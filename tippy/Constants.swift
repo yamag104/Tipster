@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 struct Constants {
-  static let TipControlIndex = "tipControlIndex"
+  static let TipControlIndex = "TipControlIndex"
   static let KeyboardOffset = CGFloat(225.0)
+}
+
+struct Notification {
+  static let DefaultTipChanged = "NotificationDefaultTipChanged"
 }

@@ -24,7 +24,6 @@
                                 <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="n8K-wq-HAu"/>
-                                    <action selector="tipControlDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zeg-co-Dbm"/>
                                 </connections>
                             </segmentedControl>
                             <view alpha="0.5" contentMode="scaleToFill" id="C4t-zO-h3R">
