@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
   @IBAction func tipControlChanged(sender: AnyObject) {
     // Persist tip % value
     let defaults = NSUserDefaults.standardUserDefaults()
-    defaults.setInteger(defaultTipControl.selectedSegmentIndex, forKey: Constants.kTipControlIndex)
+    defaults.setInteger(defaultTipControl.selectedSegmentIndex, forKey: Constants.TipControlIndex)
     defaults.synchronize()
   }
 }

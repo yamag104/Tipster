@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct Constants {
-  static let kTipControlIndex = "tipControlIndex"
-  static let kKeyboardOffset = CGFloat(225.0)
-}
-
 class TipViewController: UIViewController {
   
   @IBOutlet weak var tipLabel: UILabel!
@@ -28,7 +23,7 @@ class TipViewController: UIViewController {
     billField.becomeFirstResponder()
     // Get persisted tip % value 
     let defaults = NSUserDefaults.standardUserDefaults()
-    let tipControlIndex = defaults.integerForKey(Constants.kTipControlIndex)
+    let tipControlIndex = defaults.integerForKey(Constants.TipControlIndex)
     tipControl.setEnabled(true, forSegmentAtIndex: tipControlIndex)
   }
   
@@ -60,12 +55,12 @@ class TipViewController: UIViewController {
     
     var rect = tipView.frame
     if (movedUp) {
-      rect.origin.y -= Constants.kKeyboardOffset
-      rect.size.height += Constants.kKeyboardOffset
+      rect.origin.y -= Constants.KeyboardOffset
+      rect.size.height += Constants.KeyboardOffset
       tipViewHidden = false
     } else {
-      rect.origin.y += Constants.kKeyboardOffset
-      rect.size.height -= Constants.kKeyboardOffset
+      rect.origin.y += Constants.KeyboardOffset
+      rect.size.height -= Constants.KeyboardOffset
       tipViewHidden = true
     }
     
