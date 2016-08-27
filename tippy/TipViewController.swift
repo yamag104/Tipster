@@ -19,14 +19,13 @@ class TipViewController: UIViewController {
   let defaults = NSUserDefaults.standardUserDefaults()
   
   override func viewDidLoad() {
-    print("viewDidLoad")
     super.viewDidLoad()
     setViewMovedUp(false)
     // Always show number pad
     billField.becomeFirstResponder()
     updateTipSegmentControl()
     
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultTipChanged",
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TipViewController.defaultTipChanged),
                                                                name: Notification.DefaultTipChanged,
                                                              object: nil)
   }
