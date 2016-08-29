@@ -17,17 +17,24 @@ class TipViewController: UIViewController {
   @IBOutlet weak var tipView: UIView!
   var tipViewHidden: Bool!
   let defaults = NSUserDefaults.standardUserDefaults()
+  var start: NSDate!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setViewMovedUp(false)
+  
     // Always show number pad
     billField.becomeFirstResponder()
     updateTipSegmentControl()
-    
+    updateBillField()
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TipViewController.defaultTipChanged),
                                                                name: Notification.DefaultTipChanged,
                                                              object: nil)
+    
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    defaults.setInteger(Int(billField.text!)!, forKey: Constants.TipAmount)
   }
   
   override func didReceiveMemoryWarning() {
@@ -41,6 +48,8 @@ class TipViewController: UIViewController {
   }
   
   @IBAction func calculateTip(sender: AnyObject) {
+    start = NSDate()
+    
     let tipPercentages = [0.18, 0.2, 0.25]
     
     let bill = Double(billField.text!) ?? 0
@@ -79,6 +88,16 @@ class TipViewController: UIViewController {
   func updateTipSegmentControl() {
     let tipControlIndex = defaults.integerForKey(Constants.TipControlIndex)
     tipControl.selectedSegmentIndex = tipControlIndex
+  }
+  
+  func updateBillField() {
+    let timeInterval = start.timeIntervalSinceNow
+    // If you return within 10 mins, retrieve the amount
+    if (timeInterval < 600) {
+      billField.text = String(defaults.integerForKey(Constants.TipAmount))
+    } else {
+      billField.text = ""
+    }
   }
 }
 

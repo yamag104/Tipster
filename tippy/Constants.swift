@@ -11,6 +11,7 @@ import UIKit
 
 struct Constants {
   static let TipControlIndex = "TipControlIndex"
+  static let TipAmount = "TipAmount"
   static let KeyboardOffset = CGFloat(225.0)
 }
 
